@@ -12,17 +12,20 @@
 
 import React, { Component} from 'react';
 import { render } from 'react-dom';
-import {Router,Route,Link, hashHistory} from 'react-router'
-import App from './App'
+import { Provider } from 'react-redux';
+import {Router,Route,Link, hashHistory} from 'react-router';
+import store from './store';
+import App from './App';
 
 
 const root = document.getElementById('root');
 
 const routes=(
-  <Router history={ hashHistory}>
+	<Provider store={store}>
+    <Router history={ hashHistory}>
     <Route path='/' component={App}/>
-     
   </Router>
+  </Provider>
 
 )
 
