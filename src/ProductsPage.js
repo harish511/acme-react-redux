@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux'
 import ProductForm from './ProductForm';
 import ProductList from './ProductList';
 import store from './store';
@@ -12,13 +13,14 @@ export default class extends Component {
     this.deleteProduct=this.deleteProduct.bind(this);
   }
   saveProduct(product){
-      this.state.productsList.push(product);
+      //this.state.productsList.push(product);
       //this.setState({productsList:this.state.productsList});
+      console.log(product);
        store.dispatch(saveProduct(product));
   }
 
   deleteProduct(product){
-    this.state.productsList.splice(this.state.productsList.indexOf(product), 1);
+    //this.state.productsList.splice(this.state.productsList.indexOf(product), 1);
    // this.setState({productsList:this.state.productsList});
      store.dispatch(deleteProduct(product));
   }

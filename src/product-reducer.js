@@ -15,11 +15,12 @@ export default function (state = initialProductsState, action) {
   switch (action.type) {
 
     case SAVE_PRODUCT:
-      newState.productsList.push(action.value);
+      newState.productsList.push(action.product);
+      console.log(newState.productsList);
       break;
 
     case DELETE_PRODUCT:
-      newState.productsList.splice(newState.productsList.indexOf(action.value), 1);
+      newState.productsList.splice(newState.productsList.indexOf(action.product), 1);
       break;
 
     default:
